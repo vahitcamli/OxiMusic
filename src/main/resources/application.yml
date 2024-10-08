@@ -1,0 +1,32 @@
+server:
+  port: 9009
+  # normalde burası 0 olmalı her instance için otomatik port ataması yapar
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: OXIMusicApplication
+  datasource:
+    url: jdbc:postgresql://localhost:5432/OXIMusicdb
+    username: postgres
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      javax:
+        persistence:
+          validation:
+            mode: none
+    show-sql: true
+  security:
+    basic:
+      enabled: false
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
